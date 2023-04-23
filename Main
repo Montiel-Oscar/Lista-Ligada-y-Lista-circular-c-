@@ -1,0 +1,42 @@
+#include "listacir.h"
+#include "listalig.h"
+#include <stdio.h>
+
+#define RED "\033[31m"
+#define WHITE "\033[1;37m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN "\033[36m"
+#define RESET "\033[0m"
+#define NEGRITA "\033[1m"
+#define SUB "\033[4m"
+#define REV "\033[7m"
+
+int main(){
+  int op;
+  do{
+    printf( NEGRITA BLUE "\t\t###MENU###\n" RESET);
+    printf("1." GREEN "Lista Simple\n" RESET);
+    printf("2." GREEN "Lista Circular\n" RESET);
+    printf("3." GREEN "Salir\n" RESET);
+    printf("Ingrese una opcion: ");
+    scanf("%d", &op);
+    switch(op){
+      case 1:
+        menu_lista(); 
+        break;
+      case 2:
+        menu_listacir();
+        break;
+      case 3:
+        printf(CYAN"Gracias por usar el programa\n" RESET);
+        break;
+      default:
+        printf(RED "Opcion invalida, vuelva a intentarlo.\n"RESET);
+    }
+  }while(op != 3);
+  
+  return 0;
+}
